@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sobre Mim</title>
+  <meta name="description" content="Conheça quem faz o Namedly: introdução, interesses, hobbies e trabalhos.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" type="image/png" href="../imgs/logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/about.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+  <!-- Navbar -->
+  <header class="nav">
+    <nav aria-label="Principal">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="../index.html">Início</a></li>
+        <li><a class="nav__link" href="about.html" aria-current="page">Sobre</a></li>
+        <li><a class="nav__link" href="landing-page.html">Contatos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo" lang="en">
+
+    <!-- Topo e introdução -->
+    <section class="top">
+      <div class="wrap">
+        <h1 class="heading top__title">About me</h1>
+
+        <div class="intro">
+          <div class="portrait">
+            <picture>
+              <source media="(min-width: 1280px)" srcset="../imgs/portrait-desktop.png" width="1152" height="776">
+              <source media="(min-width: 800px)" srcset="../imgs/portrait-tablet.png" width="1344" height="882">
+              <img src="../imgs/portrait-mobile.png" width="654" height="490" fetchpriority="high" alt="Retrato ilustrado">
+            </picture>
+          </div>
+          <div class="intro__content">
+            <h2 class="intro__heading">Introduction</h2>
+            <p class="intro__text">A little paragraph of text that gives a sense of what you do. When you're here, you are, and you can tell the world a bit more. This is the intro that you tell the Idea to be.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interesses e hobbies -->
+    <section class="wrap interests">
+      <h2 class="interests__title">Interests and hobbies</h2>
+      <p class="interests__text">A little section to round out the professional aspect of the webpage. Where the person lives? It, well, it? What do they like — and what are they? Be? Bad habits like this can go here in text.</p>
+
+      <div class="gallery">
+        <picture class="gallery__item">
+          <source media="(min-width: 1280px)" srcset="../imgs/tile-1-desktop.png" width="651" height="610">
+          <source media="(min-width: 800px)" srcset="../imgs/tile-1-tablet.png" width="406" height="380">
+          <img src="../imgs/tile-1-mobile.png" width="654" height="614" loading="lazy" decoding="async" alt="Gradiente rosa e verde">
+        </picture>
+        <picture class="gallery__item">
+          <source media="(min-width: 1280px)" srcset="../imgs/tile-2-desktop.png" width="652" height="610">
+          <source media="(min-width: 800px)" srcset="../imgs/tile-2-tablet.png" width="406" height="380">
+          <img src="../imgs/tile-2-mobile.png" width="654" height="614" loading="lazy" decoding="async" alt="Textura lavanda com pontos">
+        </picture>
+        <picture class="gallery__item">
+          <source media="(min-width: 1280px)" srcset="../imgs/tile-3-desktop.png" width="651" height="610">
+          <source media="(min-width: 800px)" srcset="../imgs/tile-3-tablet.png" width="406" height="380">
+          <img src="../imgs/tile-3-mobile.png" width="654" height="614" loading="lazy" decoding="async" alt="Textura verde clara">
+        </picture>
+      </div>
+
+      <ul class="works">
+        <li class="works__item"><span>Agency name</span><time class="works__year" datetime="2024">2024</time></li>
+        <li class="works__item"><span>Studio name</span><time class="works__year" datetime="2023">2023</time></li>
+        <li class="works__item"><span>Company name</span><time class="works__year" datetime="2022">2022</time></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <a class="footer__brand" href="index.html">
+      <img src="../imgs/logo.png" class="logo-footer" alt="logo-footer">
+      <p>Eulália Henrique - © 2026 Todos os direitos reservados.</p>
+    </a>
+
+    <nav class="footer__social" aria-label="Redes sociais">
+      <a href="#" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg>
+      </a>
+      <a href="#" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10v6M8 7.5v.01M12 16v-6m0 3c0-2 4-3 4 0v3"/></svg>
+      </a>
+      <a href="#" aria-label="X">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4l16 16M20 4L4 20"/></svg>
+      </a>
+    </nav>
+  </footer>
+
+</body>
+</html>

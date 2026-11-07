@@ -1,0 +1,151 @@
+/* ==========================================================================
+   ABOUT · página "About me"
+   ========================================================================== */
+
+
+/* 1. Layout
+   ========================================================================== */
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+
+/* 2. Topo e introdução
+   ========================================================================== */
+.top {
+  padding: 110px 0 56px;
+  margin-top: calc(var(--nav-height) * -1);
+  background: var(--color-sage);
+}
+
+.top__title {
+  margin-bottom: 28px;
+  font-size: clamp(1.875rem, 4vw, 2.5rem);
+}
+
+.intro {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* Linhas vermelhas verticais */
+.intro::before,
+.intro::after {
+  content: "";
+  position: absolute;
+  top: -40px;
+  bottom: -40px;
+  width: 1px;
+  background: var(--color-coral);
+}
+
+.intro::before { left: -12px; }
+.intro::after  { left: calc(56% - 8px); }
+
+.portrait picture {
+  display: block;
+}
+
+.portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.intro__heading {
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.intro__text,
+.interests__text {
+  max-width: 28rem;
+  margin-top: 8px;
+  font-size: 0.875rem;
+  color: var(--color-muted);
+}
+
+
+/* 3. Interesses e hobbies
+   ========================================================================== */
+.interests__title {
+  margin-top: 48px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.interests__text {
+  max-width: 40rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 28px 0 40px;
+}
+
+.gallery__item {
+  display: block;
+}
+
+.gallery__item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+/* 4. Lista de trabalhos
+   ========================================================================== */
+.works {
+  padding: 0 0 56px;
+  list-style: none;
+}
+
+.works__item {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 0;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.works__year {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--color-muted);
+}
+
+
+/* 5. Responsivo (mesmos pontos de quebra do Figma)
+   Tablet: 800px a 1279px · Mobile: até 799px
+   ========================================================================== */
+@media (max-width: 1279px) {
+  .intro {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .intro::before,
+  .intro::after {
+    display: none;
+  }
+}
+
+@media (max-width: 799px) {
+  .wrap {
+    padding: 0 20px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}

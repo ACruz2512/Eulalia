@@ -1,0 +1,64 @@
+/* ==========================================================================
+   LANDING PAGE · página de contato
+   ========================================================================== */
+
+
+/* 1. Estrutura da página (rodapé sempre no fim da tela)
+   ========================================================================== */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.landing {
+  display: flex;
+  flex: 1;
+  padding: 0 32px;
+}
+
+
+/* 2. Imagem em destaque
+   ========================================================================== */
+.art {
+  position: relative;
+  flex: 1;
+  min-height: 360px;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.art picture {
+  display: contents;
+}
+
+.art img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.logo-footer {
+
+  max-width: 100%;
+  width: 75px;
+  border-radius: 10px;
+
+}
+
+
+/* 3. Responsivo
+   ========================================================================== */
+@media (max-width: 799px) {
+  .landing {
+    flex: none;
+    padding: 0 20px;
+  }
+
+  .art {
+    min-height: 0;
+    aspect-ratio: 654 / 448;
+  }
+}

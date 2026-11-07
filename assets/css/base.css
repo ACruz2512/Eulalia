@@ -1,0 +1,278 @@
+/* ==========================================================================
+   BASE · estilos compartilhados por todas as páginas
+   Conteúdo: variáveis, reset, navbar, botões e rodapé
+   ========================================================================== */
+
+
+/* 1. Variáveis
+   ========================================================================== */
+:root {
+  --color-ink: #111;
+  --color-muted: #555;
+  --color-line: #e3e3e3;
+  --color-pill: #efefef;
+  --color-white: #fff;
+  --color-focus: #5b5bf0;
+
+  --font-base: "Inter", system-ui, sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-pill: 999px;
+
+  --nav-height: 69px;
+  --container: 90rem;
+
+  /* Paleta de apoio (usada nas páginas) */
+  --color-sage: #f3fae6;
+  --color-coral: #f0948a;
+  --color-ink-soft: #333;
+}
+
+
+/* 2. Reset e elementos globais
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+/* Reserva o espaço da barra de rolagem em todas as páginas,
+   assim a navbar não muda de lugar quando a página não tem rolagem */
+html {
+  scrollbar-gutter: stable;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-base);
+  color: var(--color-ink);
+  background: var(--color-white);
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* Títulos de destaque: o texto quebra em linhas equilibradas, sem precisar de <br> */
+.heading {
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+
+/* 3. Navbar
+   ========================================================================== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--nav-height); /* altura fixa: o resto da página usa este valor */
+}
+
+.nav__list {
+  display: flex;
+  gap: 2px;
+  padding: 5px;
+  list-style: none;
+  background: var(--color-pill);
+  border-radius: var(--radius-pill);
+}
+
+.nav__link {
+  display: block;
+  padding: 6px 16px;
+  font-size: 0.8125rem;
+  text-decoration: none;
+  border-radius: var(--radius-pill);
+  transition: background 0.15s;
+}
+
+.nav__link:hover {
+  background: var(--color-white);
+}
+
+.nav__link[aria-current="page"] {
+  color: var(--color-white);
+  background: var(--color-ink);
+}
+
+
+/* 4. Botões
+   ========================================================================== */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  font: 500 0.8125rem var(--font-base);
+  text-decoration: none;
+  border: 1px solid var(--color-ink);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, transform 0.15s;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn--dark {
+  color: var(--color-white);
+  background: var(--color-ink);
+}
+
+.btn--dark:hover {
+  background: var(--color-ink-soft);
+}
+
+.btn--light {
+  background: var(--color-white);
+}
+
+.btn--light:hover {
+  background: var(--color-pill);
+}
+
+
+/* 5. Rodapé
+   ========================================================================== */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding: 20px 32px;
+  font-size: 0.8125rem;
+}
+
+.footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer__social {
+  display: flex;
+  gap: 4px;
+  margin-right: -12px; /* alinha o ícone (não a área de toque) com a borda do conteúdo */
+}
+
+/* Área de toque de 40px para cada ícone */
+.footer__social a {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: background 0.15s;
+}
+
+.footer__social a:hover {
+  background: var(--color-pill);
+}
+
+.footer__social svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: var(--color-muted);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.footer__social a:hover svg {
+  stroke: var(--color-ink);
+}
+
+.logo-footer {
+
+  max-width: 100%;
+  width: 75px;
+  border-radius: 10px;
+
+}
+
+/* 6. Acessibilidade
+   ========================================================================== */
+/* Link "pular para o conteúdo": aparece só quando recebe foco do teclado */
+.skip-link {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 20;
+  padding: 8px 14px;
+  font-size: 0.8125rem;
+  color: var(--color-white);
+  background: var(--color-ink);
+  border-radius: 8px;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+/* Texto lido por leitores de tela, invisível na tela */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+
+/* 7. Responsivo
+   ========================================================================== */
+@media (max-width: 799px) {
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 20px 20px 28px;
+  }
+
+  .footer__social {
+    margin: 0 0 0 -12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

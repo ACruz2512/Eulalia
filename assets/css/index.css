@@ -1,0 +1,134 @@
+/* ==========================================================================
+   INDEX · página principal
+   ========================================================================== */
+
+
+/* 1. Hero
+   ========================================================================== */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 420px;
+  margin-top: calc(var(--nav-height) * -1); /* imagem passa por baixo da navbar */
+}
+
+.hero__text {
+  align-self: center;
+  padding: 110px 48px 48px 72px;
+}
+
+.hero__title {
+  max-width: 9em;
+  font-size: clamp(2.125rem, 4.2vw, 3.25rem);
+}
+
+.hero__description {
+  max-width: 24rem;
+  margin: 16px 0 24px;
+  font-size: 0.9375rem;
+  color: var(--color-muted);
+  text-wrap: pretty;
+}
+
+.hero__art {
+  overflow: hidden;
+}
+
+.hero__art picture {
+  display: contents; /* a imagem se comporta como filha direta do .hero__art */
+}
+
+.hero__art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* 2. Chamada (call to action)
+   ========================================================================== */
+.cta {
+  padding: 80px 24px 64px;
+  text-align: center;
+}
+
+.cta__title {
+  max-width: 9em;
+  margin-inline: auto;
+  font-size: clamp(1.875rem, 4vw, 2.75rem);
+}
+
+.cta__description {
+  max-width: 24rem;
+  margin: 14px auto 22px;
+  font-size: 0.9375rem;
+  color: var(--color-muted);
+  text-wrap: pretty;
+}
+
+.cta .actions {
+  justify-content: center;
+}
+
+
+/* 3. Cards (cada card é uma imagem própria: desktop, tablet e mobile)
+   ========================================================================== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding: 0 32px 48px;
+  list-style: none;
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+/* 4. Responsivo (mesmos pontos de quebra do Figma)
+   Tablet: 800px a 1279px · Mobile: até 799px
+   ========================================================================== */
+@media (max-width: 1279px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    text-align: center;
+  }
+
+  .hero__art {
+    order: -1;
+  }
+
+  .hero__art img {
+    height: auto;
+  }
+
+  .hero__text {
+    padding: 36px 24px;
+  }
+
+  .hero__title,
+  .hero__description {
+    margin-inline: auto;
+  }
+
+  .hero .actions {
+    justify-content: center;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 799px) {
+  .cards {
+    padding-inline: 20px;
+  }
+}
